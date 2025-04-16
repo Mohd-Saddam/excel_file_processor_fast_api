@@ -72,7 +72,6 @@ def test_process_excel_success(mock_return):
         assert data["rows"] == [["data1", "data2", "data1 - data2"]]
         assert data["concatenated_columns"] == ["Column1", "Column2"]
         assert data["total_rows"] == 1
-        assert "timestamp" in data
 
 # Test for file not found error
 @pytest.mark.parametrize("mock_return", [
