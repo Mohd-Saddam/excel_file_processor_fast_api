@@ -141,7 +141,7 @@ Response from api
     "total_rows": 5,
     "error": null
 }
-```
+
 
 
 looks like passes test cases
@@ -179,6 +179,8 @@ main.py      34      3    91%
 -----------------------------
 TOTAL        34      3    91%
 =================================================================== 15 passed in 2.85s ==================================================================== 
+
+```
 ## Documentation
 
 Interactive API documentation is available at:
