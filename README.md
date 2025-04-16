@@ -32,10 +32,10 @@ python main.py
 
 ```bash
 # Run all tests
-pytest
+pytest test_main.py
 
 # Run tests with coverage report
-pytest --cov=.
+pytest test_main.py -v --cov=main --cov-report=term
 ```
 
 ## API Usage
