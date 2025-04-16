@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+.env
+.venv
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Project specific
+logs/
+logs/*.log
+*.xlsx
+*.xls
+*.csv
+*.db
+*.sqlite3
+!test_data/*.xlsx  # Keep test data Excel files
+!test_data/*.csv   # Keep test data CSV files
+
+# Testing
+.coverage
+.pytest_cache/
+coverage.xml
+
+# Temporary files
+*.bak
+*.tmp
+*~
