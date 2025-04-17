@@ -2,6 +2,7 @@ import pytest
 import os
 import sys
 from datetime import datetime
+from http import HTTPStatus
 from unittest.mock import patch, MagicMock, mock_open
 from fastapi import status
 from fastapi.testclient import TestClient
@@ -75,7 +76,7 @@ def test_process_excel_success(mock_return):
 
 # Test for file not found error
 @pytest.mark.parametrize("mock_return", [
-    Result.fail("File does not exist at path: test_file.xlsx")
+    Result.fail("File does not exist at path: test_file.xlsx", status_code=HTTPStatus.NOT_FOUND)
 ])
 def test_process_excel_file_not_found(mock_return):
     """Test file not found error handling"""
@@ -91,11 +92,11 @@ def test_process_excel_file_not_found(mock_return):
         
         # Validate response
         assert response.status_code == status.HTTP_404_NOT_FOUND
-        assert "File does not exist" in response.json()["detail"]
+        assert "File does not exist" in response.json()["error"]
 
 # Test for missing required columns error
 @pytest.mark.parametrize("mock_return", [
-    Result.fail("Missing required columns: Column3, Column4")
+    Result.fail("Missing required columns: Column3, Column4", status_code=HTTPStatus.UNPROCESSABLE_ENTITY)
 ])
 def test_process_excel_missing_columns(mock_return):
     """Test missing required columns error handling"""
@@ -111,11 +112,11 @@ def test_process_excel_missing_columns(mock_return):
         
         # Validate response
         assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
-        assert "Missing required columns" in response.json()["detail"]
+        assert "Missing required columns" in response.json()["error"]
 
 # Test for general processing error
 @pytest.mark.parametrize("mock_return", [
-    Result.fail("Processing error: Invalid Excel format")
+    Result.fail("Processing error: Invalid Excel format", status_code=HTTPStatus.BAD_REQUEST)
 ])
 def test_process_excel_general_error(mock_return):
     """Test general processing error handling"""
@@ -131,11 +132,11 @@ def test_process_excel_general_error(mock_return):
         
         # Validate response
         assert response.status_code == status.HTTP_400_BAD_REQUEST
-        assert "Processing error" in response.json()["detail"]
+        assert "Processing error" in response.json()["error"]
 
 # Test for empty result response
 @pytest.mark.parametrize("mock_return", [
-    Result.fail("Unknown error without specific message")
+    Result.fail("Unknown error without specific message", status_code=HTTPStatus.BAD_REQUEST)
 ])
 def test_process_excel_unknown_error(mock_return):
     """Test unknown error handling that doesn't match specific patterns"""
@@ -151,7 +152,7 @@ def test_process_excel_unknown_error(mock_return):
         
         # Validate response - should default to 400 Bad Request
         assert response.status_code == status.HTTP_400_BAD_REQUEST
-        assert "Unknown error" in response.json()["detail"]
+        assert "Unknown error" in response.json()["error"]
 
 # Test for logging setup
 def test_logging_setup():
