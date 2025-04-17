@@ -1,0 +1,663 @@
+2025-04-17 10:02:20,926 - __main__ - INFO - Starting Excel Processor API in development mode
+2025-04-17 10:03:01,983 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:03:02,463 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:03:28,483 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 10:03:28,489 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 10:03:28,498 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 10:03:28,505 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 10:03:35,909 - __main__ - INFO - Starting Excel Processor API in development mode
+2025-04-17 10:03:59,895 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:04:00,233 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:04:07,203 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:04:07,229 - main - WARNING - Returning error response: Missing required columns: email
+2025-04-17 10:04:12,963 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:04:13,081 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:04:34,946 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:04:35,205 - main - WARNING - Returning error response: Missing required columns: email
+2025-04-17 10:05:40,396 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:05:40,729 - main - WARNING - Returning error response: Missing required columns: email
+2025-04-17 10:05:48,830 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:05:49,072 - main - WARNING - Returning error response: Missing required columns: email from excel
+2025-04-17 10:07:17,079 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:07:17,377 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:11:06,689 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:11:06,989 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:12:04,035 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:12:04,301 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:12:08,754 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:12:08,768 - main - WARNING - Returning error response: Missing required columns: email from excel
+2025-04-17 10:16:54,811 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:16:55,085 - main - WARNING - Returning error response: Missing required columns: email from excel
+2025-04-17 10:18:44,815 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:18:45,071 - main - WARNING - Returning error response: Missing required columns: email from excel
+2025-04-17 10:18:59,329 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:18:59,559 - main - WARNING - Returning error response: Missing required columns: email from excel
+2025-04-17 10:21:15,242 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:21:15,493 - main - WARNING - Returning error response: Missing required columns: email from excel
+2025-04-17 10:21:17,113 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:21:17,126 - main - WARNING - Returning error response: Missing required columns: email from excel
+2025-04-17 10:21:18,383 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:21:18,400 - main - WARNING - Returning error response: Missing required columns: email from excel
+2025-04-17 10:21:19,541 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:21:19,555 - main - WARNING - Returning error response: Missing required columns: email from excel
+2025-04-17 10:21:55,848 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:21:55,865 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:22:01,865 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xls
+2025-04-17 10:22:01,963 - main - WARNING - Returning error response: File does not exist at path: C:/Users/Admin/Downloads/sample.xls
+2025-04-17 10:22:09,111 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:22:09,398 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:22:16,583 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:22:16,865 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:22:56,490 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:22:56,757 - main - WARNING - Returning error response: Missing required columns: phonee from excel
+2025-04-17 10:26:14,695 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:26:14,718 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:26:18,387 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xls
+2025-04-17 10:26:18,389 - main - WARNING - Returning error response: File does not exist at path: C:/Users/Admin/Downloads/sample.xls
+2025-04-17 10:26:24,413 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:26:24,484 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:27:05,314 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:27:05,610 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:27:08,299 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:27:08,316 - main - WARNING - Returning error response: Missing required columns: addressA from excel
+2025-04-17 10:28:54,121 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:28:54,369 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:28:57,718 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:28:57,739 - main - WARNING - Returning error response: Missing required columns: phonee from excel
+2025-04-17 10:29:00,609 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:29:00,628 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:29:04,557 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlx
+2025-04-17 10:29:04,559 - main - WARNING - Returning error response: File does not exist at path: C:/Users/Admin/Downloads/sample.xlx
+2025-04-17 10:29:06,698 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:29:06,714 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:31:35,641 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:31:35,872 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:31:36,892 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:31:36,906 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:36:44,338 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:36:44,360 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:39:53,018 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:39:53,059 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:39:54,155 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:39:54,176 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:39:55,132 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:39:55,256 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:39:56,030 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:39:56,044 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:39:56,978 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:39:56,994 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:39:57,883 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:39:57,899 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:39:58,812 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:39:58,832 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 10:40:12,274 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 10:40:12,288 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 11:15:13,212 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 11:15:13,261 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 11:15:15,108 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 11:15:15,135 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 11:15:16,408 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 11:15:16,433 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 11:15:17,421 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 11:15:17,451 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 11:17:09,066 - __main__ - INFO - Starting Excel Processor API in development mode.
+2025-04-17 11:17:16,846 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 11:17:17,237 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 11:19:11,261 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 11:19:11,290 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 11:50:18,348 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 11:50:18,528 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 11:50:24,198 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 11:50:24,241 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 11:50:31,966 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 11:50:32,011 - main - WARNING - Returning error response: Missing required columns: phonee from excel
+2025-04-17 11:50:53,058 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 11:50:53,107 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 11:51:34,969 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 11:51:35,187 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 11:51:35,252 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 11:51:35,306 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 12:06:06,263 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 12:06:06,277 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 12:06:06,296 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 12:06:06,306 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 12:07:08,356 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 12:07:08,415 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 12:07:08,437 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 12:07:08,478 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 12:17:03,647 - __main__ - INFO - Starting Excel Processor API in development mode.
+2025-04-17 12:17:07,074 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 12:17:07,421 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 12:26:33,120 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 12:26:33,135 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 12:26:33,148 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 12:26:33,158 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 13:56:13,959 - __main__ - INFO - Starting Excel Processor API in development mode.
+2025-04-17 13:56:43,106 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 13:56:43,415 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 13:57:02,103 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 13:57:02,115 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 13:57:02,129 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 13:57:02,150 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 14:01:57,143 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 14:01:57,157 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 14:01:57,172 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 14:01:57,184 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 14:03:51,291 - __main__ - INFO - Starting Excel Processor API in development mode.
+2025-04-17 14:03:59,146 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 14:03:59,486 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 14:04:37,566 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 14:04:37,585 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 14:19:17,021 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 14:19:17,278 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 14:21:44,898 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 14:21:45,143 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 14:34:50,150 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 14:34:50,194 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 14:51:55,753 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 14:51:55,792 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:01:32,936 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:01:33,190 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:01:38,302 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:01:38,323 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:01:50,942 - main - INFO - Using default file path: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:01:50,942 - main - INFO - Using default required columns: ['address', 'phone']
+2025-04-17 15:01:50,942 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:01:50,968 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:02:05,175 - main - INFO - Using default file path: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:02:05,176 - main - INFO - Using default required columns: ['address', 'phone']
+2025-04-17 15:02:05,177 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:02:05,200 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:02:48,745 - main - INFO - Using default file path: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:02:48,746 - main - INFO - Using default required columns: ['address', 'phone']
+2025-04-17 15:02:48,746 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:02:48,761 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:08:51,638 - main - INFO - Empty JSON object received or all fields are None
+2025-04-17 15:08:51,639 - main - INFO - Using default file path: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:08:51,639 - main - INFO - Using default required columns: ['address', 'phone']
+2025-04-17 15:08:51,640 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:08:51,885 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:10:49,284 - main - INFO - Using default file path: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:10:49,285 - main - INFO - Using default required columns: ['address', 'phone']
+2025-04-17 15:10:49,285 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:10:49,553 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:11:04,445 - main - INFO - Empty JSON object received or all fields are None
+2025-04-17 15:11:04,448 - main - INFO - Using default file path: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:11:04,450 - main - INFO - Using default required columns: ['address', 'phone']
+2025-04-17 15:11:04,450 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:11:04,684 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:26:17,637 - __main__ - INFO - Starting Excel Processor API in development mode.
+2025-04-17 15:30:25,093 - main - INFO - Empty JSON object received or all fields are None
+2025-04-17 15:30:25,100 - main - INFO - Using default file path: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:30:25,101 - main - INFO - Using default required columns: ['address', 'phone']
+2025-04-17 15:30:25,102 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:30:25,683 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:30:34,830 - __main__ - INFO - Starting Excel Processor API in development mode.
+2025-04-17 15:35:22,511 - __main__ - INFO - Starting Excel Processor API in development mode.
+2025-04-17 15:35:42,246 - __main__ - INFO - Starting Excel Processor API in development mode.
+2025-04-17 15:38:07,545 - main - INFO - Caught empty JSON payload error, handling with default values
+2025-04-17 15:38:24,045 - main - INFO - Caught empty JSON payload error, handling with default values
+2025-04-17 15:39:18,308 - __main__ - INFO - Starting Excel Processor API in development mode.
+2025-04-17 15:39:23,110 - main - INFO - Caught empty JSON payload error, handling with default values
+2025-04-17 15:39:48,429 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:39:48,871 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:40:45,183 - main - INFO - Caught empty JSON payload error, handling with default values
+2025-04-17 15:40:45,184 - main - INFO - Using default file path: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:40:45,184 - main - INFO - Using default required columns: ['address', 'phone']
+2025-04-17 15:40:45,474 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:40:50,200 - main - INFO - Caught empty JSON payload error, handling with default values
+2025-04-17 15:40:50,200 - main - INFO - Using default file path: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:40:50,202 - main - INFO - Using default required columns: ['address', 'phone']
+2025-04-17 15:40:50,620 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:41:03,717 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:41:03,743 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:41:10,321 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:41:10,349 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:41:14,308 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:41:14,327 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:41:41,505 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:41:41,514 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:41:41,523 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:41:41,528 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:41:42,093 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:43:29,051 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:43:29,059 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:43:29,064 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:43:29,071 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:43:29,141 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:43:35,060 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:43:35,071 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:43:35,081 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:43:35,092 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:43:35,199 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:44:48,685 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:44:48,699 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:44:48,711 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:44:48,723 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:44:48,862 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:46:20,966 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:46:20,978 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:46:20,990 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:46:21,002 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:46:21,113 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:46:21,311 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:46:38,395 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:46:38,406 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:46:38,416 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:46:38,426 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:46:38,527 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:46:38,753 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:48:12,850 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:48:12,863 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:48:12,874 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:48:12,885 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:48:12,996 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:48:13,203 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:48:32,902 - __main__ - INFO - Starting Excel Processor API in development mode.
+2025-04-17 15:48:40,108 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 15:48:41,253 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 15:48:59,397 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:48:59,406 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:48:59,418 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:48:59,431 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:48:59,540 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:48:59,799 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:49:49,170 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:49:49,184 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:49:49,193 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:49:49,207 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:49:49,342 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:49:49,585 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:50:32,368 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:50:32,377 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:50:32,390 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:50:32,400 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:50:32,498 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:50:32,736 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:51:54,358 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:51:54,369 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:51:54,378 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:51:54,389 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:51:54,500 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:51:54,545 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:53:30,648 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:53:30,664 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:53:30,675 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:53:30,684 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:53:30,791 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:53:30,839 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:53:31,165 - main - WARNING - Returning error response: Failed to read Excel file: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-04-17 15:54:08,444 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:54:08,459 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:54:08,474 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:54:08,483 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:54:08,610 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:54:08,670 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:54:08,745 - main - WARNING - Returning error response: Failed to read Excel file: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-04-17 15:55:03,867 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:55:03,880 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:55:03,891 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:55:03,908 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:55:04,030 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:55:04,086 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:55:04,364 - main - WARNING - Returning error response: Failed to read Excel file: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-04-17 15:55:39,056 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:55:39,069 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:55:39,081 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:55:39,092 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:55:39,218 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:55:39,278 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:56:24,496 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:56:24,510 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:56:24,524 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:56:24,536 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:56:24,676 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:56:24,741 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:57:25,247 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:57:25,257 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:57:25,269 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:57:25,279 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:57:25,384 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:57:25,433 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 15:57:38,795 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 15:57:38,804 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 15:57:38,817 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 15:57:38,828 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 15:57:38,931 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 15:57:38,982 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:00:36,338 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:00:36,349 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:00:36,359 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:00:36,371 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:00:36,482 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:00:36,526 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:01:48,480 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:01:48,490 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:01:48,505 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:01:48,536 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:01:48,636 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:01:48,703 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:02:10,742 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:02:10,752 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:02:10,761 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:02:10,774 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:02:10,856 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:02:10,888 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:02:50,720 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:02:50,735 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:02:50,747 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:02:50,760 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:02:50,885 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:02:50,943 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:02:51,056 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:03:39,624 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:03:39,634 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:03:39,646 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:03:39,657 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:03:39,766 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:03:39,984 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:03:40,331 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:07:05,442 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:07:05,444 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:07:05,445 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:07:05,447 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:25:22,748 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:25:22,766 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:25:22,785 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:25:22,801 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:25:23,039 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:25:23,164 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:25:23,411 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:25:23,415 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:25:23,418 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:25:23,424 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:38:18,396 - __main__ - INFO - Starting Excel Processor API in development mode.
+2025-04-17 16:38:38,267 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 16:38:40,442 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 16:38:55,247 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlx
+2025-04-17 16:38:55,254 - main - WARNING - Returning error response: File does not exist at path: C:/Users/Admin/Downloads/sample.xlx
+2025-04-17 16:39:11,489 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 16:39:11,553 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 16:39:59,739 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:39:59,765 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:39:59,807 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:39:59,827 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:40:00,022 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:40:01,207 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:40:01,425 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:40:01,446 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:40:01,453 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:40:01,461 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:40:58,201 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:40:58,208 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:40:58,216 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:40:58,225 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:40:58,361 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:40:59,041 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:40:59,128 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:40:59,131 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:40:59,136 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:40:59,140 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:41:04,423 - __main__ - INFO - Starting Excel Processor API in development mode.
+2025-04-17 16:41:10,005 - main - INFO - Processing request for file: C:/Users/Admin/Downloads/sample.xlsx
+2025-04-17 16:41:10,655 - main - INFO - Successfully processed file with 5 rows
+2025-04-17 16:41:49,716 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:41:49,729 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:41:49,745 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:41:49,758 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:41:49,897 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:41:50,519 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:41:50,655 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:41:50,661 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:41:50,663 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:41:50,665 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:47:10,841 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:47:10,855 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:47:10,872 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:47:10,887 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:47:11,053 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:47:11,667 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:47:11,902 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:47:11,908 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:47:11,915 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:47:11,919 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:47:19,693 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:47:19,701 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:47:19,712 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:47:19,722 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:47:19,839 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:47:20,388 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:47:20,478 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:47:20,480 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:47:20,481 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:47:20,483 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:47:31,066 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:47:31,075 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:47:31,083 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:47:31,089 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:47:31,182 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:47:31,589 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:47:31,666 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:47:31,671 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:47:31,672 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:47:31,674 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:50:10,458 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:50:10,476 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:50:10,490 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:50:10,504 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:50:10,662 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:50:11,263 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:50:11,393 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:50:11,396 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:50:11,402 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:50:11,405 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:52:16,306 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:52:16,330 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:52:16,347 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:52:16,364 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:52:16,560 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:52:17,223 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:52:17,411 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:52:17,419 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:52:17,426 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:52:17,430 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:54:18,362 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:54:18,418 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:54:18,435 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:54:18,456 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:54:18,765 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:54:20,062 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:54:20,390 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:54:20,395 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:54:20,400 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:54:20,409 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:55:09,772 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:55:09,803 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:55:09,842 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:55:09,866 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:55:10,121 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:55:10,371 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:55:10,615 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:55:10,619 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:55:10,625 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:55:10,634 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:55:30,908 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:55:30,926 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:55:30,937 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:55:30,949 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:55:31,083 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:55:31,231 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:55:31,419 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:55:31,424 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:55:31,427 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:55:31,434 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:59:02,606 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:59:02,620 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:59:02,635 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:59:02,651 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:59:02,808 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:59:02,972 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:59:03,118 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:59:03,125 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:59:03,128 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:59:03,133 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:59:22,967 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:59:22,983 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:59:23,000 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:59:23,017 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:59:23,167 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:59:23,344 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:59:23,503 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:59:23,505 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:59:23,508 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:59:23,510 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:59:35,777 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:59:35,792 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:59:35,805 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:59:35,818 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:59:35,958 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:59:36,135 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:59:36,291 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:59:36,302 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:59:36,305 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:59:36,307 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 16:59:49,867 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 16:59:49,878 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 16:59:49,894 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 16:59:49,911 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 16:59:50,056 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 16:59:50,209 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 16:59:50,349 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 16:59:50,352 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 16:59:50,355 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 16:59:50,358 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:03:39,465 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:03:39,477 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:03:39,488 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:03:39,502 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:03:39,651 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:03:39,818 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:03:39,939 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:03:39,947 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:03:39,949 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:03:39,951 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:08:34,549 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:08:34,562 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:08:34,577 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:08:34,590 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:08:34,735 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:08:34,995 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:08:35,206 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:08:35,214 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:08:35,218 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:08:35,224 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:09:00,002 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:09:00,022 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:09:00,038 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:09:00,056 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:09:00,216 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:09:00,464 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:09:00,590 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:09:00,592 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:09:00,594 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:09:00,598 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:09:58,887 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:09:58,902 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:09:58,919 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:09:58,934 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:09:59,093 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:09:59,284 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:09:59,419 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:09:59,423 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:09:59,435 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:09:59,440 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:16:11,475 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:16:11,492 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:16:11,505 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:16:11,519 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:16:11,660 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:16:11,862 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:16:12,100 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:16:12,104 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:16:12,115 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:16:12,122 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:21:43,023 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:21:43,037 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:21:43,049 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:21:43,060 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:21:43,169 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:21:43,289 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:21:43,393 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:21:43,395 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:21:43,397 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:21:43,399 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:23:22,398 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:23:22,407 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:23:22,413 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:23:22,418 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:23:22,642 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:23:22,757 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:23:22,824 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:23:22,825 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:23:22,826 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:23:22,830 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:23:44,401 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:23:44,412 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:23:44,423 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:23:44,433 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:23:44,532 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:23:44,655 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:23:44,748 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:23:44,750 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:23:44,752 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:23:44,756 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:26:56,601 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:26:56,660 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:26:56,672 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:26:56,687 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:26:56,970 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:26:57,271 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:26:57,334 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:26:57,335 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:26:57,336 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:26:57,337 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:27:08,550 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:27:08,555 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:27:08,562 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:27:08,569 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:27:08,634 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:27:08,909 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:27:08,966 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:27:08,968 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:27:08,971 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:27:08,973 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:30:39,993 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:30:39,999 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:30:40,008 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:30:40,014 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:30:40,094 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:30:40,385 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:30:40,446 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:30:40,448 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:30:40,450 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:30:40,451 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:32:09,614 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:32:09,627 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:32:09,641 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:32:09,655 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:32:09,757 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:32:09,914 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:32:10,010 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:32:10,011 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:32:10,013 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:32:10,015 - main - WARNING - Returning error response: Some generic error without specific pattern
+2025-04-17 17:32:22,487 - main - WARNING - Returning error response: File does not exist at path: test_file.xlsx
+2025-04-17 17:32:22,498 - main - WARNING - Returning error response: Missing required columns: Column3, Column4
+2025-04-17 17:32:22,512 - main - WARNING - Returning error response: Processing error: Invalid Excel format
+2025-04-17 17:32:22,522 - main - WARNING - Returning error response: Unknown error without specific message
+2025-04-17 17:32:22,624 - main - WARNING - Returning error response: File does not exist at path: test.xlsx
+2025-04-17 17:32:22,765 - main - WARNING - Returning error response: File does not exist at path: nonexistent_file.xlsx
+2025-04-17 17:32:22,856 - main - WARNING - Returning error response: File does not exist at path: nonexistent.xlsx
+2025-04-17 17:32:22,859 - main - WARNING - Returning error response: Missing required columns: Col1, Col2
+2025-04-17 17:32:22,861 - main - WARNING - Returning error response: Invalid Excel format: Sheet not found
+2025-04-17 17:32:22,863 - main - WARNING - Returning error response: Some generic error without specific pattern
