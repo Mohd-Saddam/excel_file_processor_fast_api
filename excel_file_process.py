@@ -73,8 +73,8 @@ class FileRequest(BaseModel):
         file_path: Full path to the Excel file
         required_columns: List of column names that must exist in the file
     """
-    file_path: str
-    required_columns: List[str]
+    file_path: Optional[str] = None
+    required_columns: Optional[List[str]] = None
 
 # Excel file processor with enhanced error handling
 class FileProcessor:
@@ -161,6 +161,11 @@ class FileProcessor:
         Returns:
             Result containing either DataFrame or error message
         """
+        # Check if file_path is None
+        if file_path is None:
+            logger.error("File path is None")
+            return Result.not_found("No file path provided")
+            
         # Validate if file exists
         if not os.path.exists(file_path):
             logger.error(f"File not found", extra={"file_path": file_path})
@@ -205,10 +210,19 @@ class FileProcessor:
         Returns:
             Result indicating success or error with missing columns
         """
-        missing_cols = [col for col in required_columns if col not in df.columns]
+        # Filter out None values and handle the case when required_columns is None
+        if required_columns is None:
+            required_columns = []
+        
+        # Filter out None values from required_columns
+        valid_required_cols = [col for col in required_columns if col is not None]
+        
+        # Check which required columns are missing
+        missing_cols = [col for col in valid_required_cols if col not in df.columns]
+        
         log_context = {
             "available_columns": list(df.columns),
-            "required_columns": required_columns,
+            "required_columns": valid_required_cols,
             "missing_columns": missing_cols
         }
         
@@ -237,32 +251,36 @@ class FileProcessor:
             "required_columns": required_columns
         }
         
-        # Using only the requested columns
-        df_subset = df[required_columns]
+        # Get all available columns in the DataFrame
+        available_columns = list(df.columns)
+        
+        # Create custom output structure with concatenated column first
+        # followed by non-required columns
         
         # Check for empty DataFrame
-        if df_subset.empty:
-            logger.warning("DataFrame is empty after selecting required columns", extra=log_context)
+        if df.empty:
+            logger.warning("DataFrame is empty", extra=log_context)
             response = ProcessResponse(
                 success=True,
                 headers=[],
                 rows=[],
-                concatenated_columns=[],
+                concatenated_columns=required_columns,
                 total_rows=0,
-                error="No data found after applying column filter",
+                error="No data found",
                 status_code=HTTPStatus.OK.value,
                 status=HTTPStatus.OK.phrase
             )
             return Result.ok(response)
         
-        # Create headers list (original columns + concatenated)
-        headers = required_columns.copy()
-        headers.append("Concatenated")
+        # Create headers list (concatenated column + other columns)
+        concat_header = "_".join(required_columns)
+        other_columns = [col for col in available_columns if col not in required_columns]
+        headers = [concat_header] + other_columns
         
         # Process rows
         logger.debug("Starting row concatenation process", extra=log_context)
         start_time = time.time()
-        processed_rows = FileProcessor._create_rows_with_concatenation(df_subset)
+        processed_rows = FileProcessor._create_rows_with_concatenation(df, required_columns, other_columns)
         processing_time = time.time() - start_time
         
         logger.info(
@@ -286,24 +304,35 @@ class FileProcessor:
         return Result.ok(response)
     
     @staticmethod
-    def _create_rows_with_concatenation(df_subset: pd.DataFrame) -> List[List[str]]:
+    def _create_rows_with_concatenation(df: pd.DataFrame, required_columns: List[str], other_columns: List[str]) -> List[List[str]]:
         """
-        Creates a 2D array of rows with concatenated values.
+        Creates a 2D array of rows with custom format:
+        1. First column: Values from required columns concatenated with underscore
+        2. Remaining columns: Values from other columns
         
         Args:
-            df_subset: DataFrame with only the required columns
+            df: DataFrame with all columns
+            required_columns: List of column names to concatenate
+            other_columns: List of other columns to include after concatenated column
             
         Returns:
-            List of rows where each row contains original values plus concatenated value
+            List of rows in the specified format
         """
         rows = []
-        for _, row in df_subset.iterrows():
-            # Handle NaN values properly
-            values = row.fillna("").astype(str).tolist()
-            # Create concatenated value
-            concatenated = " - ".join(filter(None, values))
-            # Append concatenated value to the row
-            row_data = values + [concatenated]
-            rows.append(row_data)
+        for _, row in df.iterrows():
+            # Create row with concatenated column first
+            new_row = []
+            
+            # Handle required columns - concatenate with underscore
+            concat_values = [str(row[col]) if pd.notna(row[col]) else "" for col in required_columns]
+            concatenated = "_".join(filter(None, concat_values))
+            new_row.append(concatenated)
+            
+            # Add values from other columns
+            for col in other_columns:
+                value = str(row[col]) if pd.notna(row[col]) else ""
+                new_row.append(value)
+            
+            rows.append(new_row)
         
         return rows
