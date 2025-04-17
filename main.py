@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI, HTTPException, status, Response
 from pydantic import BaseModel, Field, validator
 from typing import List, Dict, Any, Optional, Union
 import os
@@ -37,10 +37,9 @@ app = FastAPI(
 @app.post(
     "/process-excel/", 
     response_model=ProcessResponse,
-    status_code=status.HTTP_200_OK,
     tags=["Excel Processing"]
 )
-async def process_excel(request: FileRequest) -> ProcessResponse:
+async def process_excel(request: FileRequest, response: Response) -> ProcessResponse:
     """
     Process an Excel file and return transformed data.
     
@@ -50,47 +49,46 @@ async def process_excel(request: FileRequest) -> ProcessResponse:
     
     Args:
         request: FileRequest object with file path and required columns
+        response: FastAPI Response object to set status code
         
     Returns:
         ProcessResponse: Object containing:
+            - success: Whether the operation was successful
+            - status_code: HTTP status code
+            - status: HTTP status description
             - headers: Column headers including concatenated column
             - rows: 2D array of row data with concatenated values
             - concatenated_columns: List of columns that were concatenated
             - total_rows: Count of rows processed
             - error: Error message if processing failed
-        
-    Raises:
-        HTTPException: If processing fails with appropriate status code
     """
     # Log the incoming request
     logger.info(f"Processing request for file: {request.file_path}")
     
     result = FileProcessor.process_file(request)
     
-    # If there was an error in processing, raise appropriate HTTP exception
-    if not result.is_success():
-        logger.warning(f"Returning error response: {result.error}")
-        if "File does not exist" in result.error:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, 
-                detail=result.error
-            )
-        elif "Missing required columns" in result.error:
-            raise HTTPException(
-                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, 
-                detail=result.error
-            )
-        else:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST, 
-                detail=result.error
-            )
+    # Set the status code in the response based on the Result object
+    response.status_code = result.status_code.value
     
-    logger.info(f"Successfully processed file with {result.data.total_rows} rows")
-    return result.data
+    if result.is_success():
+        logger.info(f"Successfully processed file with {result.data.total_rows} rows")
+        # Update ProcessResponse status fields from the Result
+        result.data.status_code = result.status_code.value
+        result.data.status = result.status_code.phrase
+        return result.data
+    else:
+        # Create an error response with the appropriate status code
+        logger.warning(f"Returning error response: {result.error}")
+        error_response = ProcessResponse(
+            success=False,
+            error=result.error,
+            status_code=result.status_code.value,
+            status=result.status_code.phrase
+        )
+        return error_response
 
 # Run the application if executed directly
 if __name__ == "__main__":
     import uvicorn
-    logger.info("Starting Excel Processor API in development mode")
+    logger.info("Starting Excel Processor API in development mode.")
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

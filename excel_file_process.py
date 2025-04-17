@@ -1,14 +1,44 @@
 import os
 import pandas as pd
 import logging
-from typing import List
+import time
+import uuid
+from typing import List, Dict, Any
 from datetime import datetime
 from utils.result import Result
 from pydantic import BaseModel
 from typing import Optional, List
+from http import HTTPStatus
 
-# Get logger
+# Configure logger with more structured format
 logger = logging.getLogger(__name__)
+
+class LogContext:
+    """Context manager for tracking and logging operation metrics"""
+    def __init__(self, operation_name: str, **kwargs):
+        self.operation_name = operation_name
+        self.start_time = None
+        self.request_id = kwargs.get('request_id', str(uuid.uuid4())[:8])
+        self.extra = kwargs
+    
+    def __enter__(self):
+        self.start_time = time.time()
+        logger.info(f"Starting {self.operation_name}", extra={"request_id": self.request_id, **self.extra})
+        return self
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        duration = time.time() - self.start_time
+        if (exc_type):
+            logger.error(
+                f"Failed {self.operation_name} in {duration:.2f}s: {str(exc_val)}", 
+                extra={"request_id": self.request_id, "duration": duration, **self.extra},
+                exc_info=(exc_type, exc_val, exc_tb)
+            )
+        else:
+            logger.info(
+                f"Completed {self.operation_name} in {duration:.2f}s", 
+                extra={"request_id": self.request_id, "duration": duration, **self.extra}
+            )
 
 # Response model for standardized API responses
 class ProcessResponse(BaseModel):
@@ -17,6 +47,8 @@ class ProcessResponse(BaseModel):
     
     Attributes:
         success: Whether the operation was successful
+        status_code: HTTP status code of the response
+        status: HTTP status description
         headers: List of column headers in the Excel file
         rows: 2D array of row data
         concatenated_columns: List of columns that were concatenated
@@ -24,6 +56,8 @@ class ProcessResponse(BaseModel):
         error: Error message if unsuccessful
     """
     success: bool
+    status_code: Optional[int] = 200
+    status: Optional[str] = "OK"
     headers: Optional[List[str]] = None
     rows: Optional[List[List[str]]] = None
     concatenated_columns: Optional[List[str]] = None
@@ -65,38 +99,56 @@ class FileProcessor:
         Returns:
             Result[ProcessResponse]: Result object containing either a successful response or error
         """
-        # Log the beginning of file processing with the file path
-        logger.info(f"Processing file: {request.file_path}")
+        request_id = str(uuid.uuid4())[:8]
+        log_context = {
+            "request_id": request_id,
+            "file_path": request.file_path,
+            "required_columns": request.required_columns
+        }
+        
+        # Log with structured data and request ID
+        logger.info(f"Processing Excel file", extra=log_context)
         
         try:
             # Validate if the file exists and can be read as an Excel file
-            # This calls the _validate_file method which returns a Result object
-            validation_result = FileProcessor._validate_file(request.file_path)
+            with LogContext("file validation", **log_context):
+                validation_result = FileProcessor._validate_file(request.file_path)
             
             # Check if validation was unsuccessful and return the error if there was one
             if not validation_result.is_success():
+                logger.warning(f"File validation failed: {validation_result.error}", extra=log_context)
                 return validation_result
             
             # Extract the pandas DataFrame from the successful validation result
             df = validation_result.data
+            log_context["row_count"] = len(df)
             
             # Validate that all required columns exist in the DataFrame
-            # This calls the _validate_columns method which returns a Result object
-            column_result = FileProcessor._validate_columns(df, request.required_columns)
+            with LogContext("column validation", **log_context):
+                column_result = FileProcessor._validate_columns(df, request.required_columns)
             
             # Check if column validation was unsuccessful and return the error if there was one
             if not column_result.is_success():
+                logger.warning(f"Column validation failed: {column_result.error}", extra=log_context)
                 return column_result
             
             # Process the data after validations are successful
-            # This calls the _process_data method which returns a Result object with ProcessResponse
-            return FileProcessor._process_data(df, request.required_columns)
+            with LogContext("data processing", **log_context):
+                process_result = FileProcessor._process_data(df, request.required_columns)
+            
+            if process_result.is_success():
+                logger.info(
+                    f"Successfully processed file with {process_result.data.total_rows} rows", 
+                    extra=log_context
+                )
+            
+            return process_result
             
         except Exception as e:
             # Log any unexpected exceptions that occur during processing
-            logger.exception(f"Unexpected error during file processing: {str(e)}")
+            logger.exception(f"Unexpected error during file processing", extra={**log_context, "error": str(e)})
             # Return a failure Result with the error message
-            return Result.fail(f"Processing error: {str(e)}")
+            return Result.server_error(f"Processing error: {str(e)}")
     
     @staticmethod
     def _validate_file(file_path: str) -> Result[pd.DataFrame]:
@@ -111,18 +163,35 @@ class FileProcessor:
         """
         # Validate if file exists
         if not os.path.exists(file_path):
-            logger.error(f"File not found: {file_path}")
-            return Result.fail(f"File does not exist at path: {file_path}")
+            logger.error(f"File not found", extra={"file_path": file_path})
+            return Result.not_found(f"File does not exist at path: {file_path}")
 
         # Try reading the Excel file
         try:
-            logger.info(f"Reading Excel file: {file_path}")
+            logger.debug(f"Attempting to read Excel file", extra={"file_path": file_path})
+            start_time = time.time()
             df = pd.read_excel(file_path)
-            logger.info(f"Successfully read file with {len(df)} rows")
+            read_time = time.time() - start_time
+            logger.info(
+                f"Successfully read Excel file", 
+                extra={
+                    "file_path": file_path, 
+                    "row_count": len(df), 
+                    "column_count": len(df.columns),
+                    "read_time_seconds": f"{read_time:.2f}"
+                }
+            )
             return Result.ok(df)
         except Exception as e:
-            logger.error(f"Failed to read Excel file: {str(e)}")
-            return Result.fail(f"Failed to read Excel file: {str(e)}")
+            logger.error(
+                f"Failed to read Excel file", 
+                extra={
+                    "file_path": file_path, 
+                    "error": str(e), 
+                    "error_type": type(e).__name__
+                }
+            )
+            return Result.fail(f"Failed to read Excel file: {str(e)}", status_code=HTTPStatus.BAD_REQUEST)
     
     @staticmethod
     def _validate_columns(df: pd.DataFrame, required_columns: List[str]) -> Result[bool]:
@@ -137,11 +206,18 @@ class FileProcessor:
             Result indicating success or error with missing columns
         """
         missing_cols = [col for col in required_columns if col not in df.columns]
-        if missing_cols:
-            error_msg = f"Missing required columns: {', '.join(missing_cols)}"
-            logger.error(error_msg)
-            return Result.fail(error_msg)
+        log_context = {
+            "available_columns": list(df.columns),
+            "required_columns": required_columns,
+            "missing_columns": missing_cols
+        }
         
+        if missing_cols:
+            error_msg = f"Missing required columns: {', '.join(missing_cols)} from excel"
+            logger.error(f"Column validation failed", extra=log_context)
+            return Result.column_not_found(error_msg)
+        
+        logger.info(f"Column validation successful", extra=log_context)
         return Result.ok(True)
     
     @staticmethod
@@ -156,36 +232,58 @@ class FileProcessor:
         Returns:
             Result containing ProcessResponse with processed data
         """
+        log_context = {
+            "total_rows": len(df),
+            "required_columns": required_columns
+        }
+        
         # Using only the requested columns
         df_subset = df[required_columns]
         
         # Check for empty DataFrame
         if df_subset.empty:
-            logger.warning("DataFrame is empty after selecting required columns")
-            return Result.ok(ProcessResponse(
+            logger.warning("DataFrame is empty after selecting required columns", extra=log_context)
+            response = ProcessResponse(
                 success=True,
                 headers=[],
                 rows=[],
                 concatenated_columns=[],
                 total_rows=0,
-                error="No data found after applying column filter"
-            ))
+                error="No data found after applying column filter",
+                status_code=HTTPStatus.OK.value,
+                status=HTTPStatus.OK.phrase
+            )
+            return Result.ok(response)
         
         # Create headers list (original columns + concatenated)
         headers = required_columns.copy()
         headers.append("Concatenated")
         
         # Process rows
+        logger.debug("Starting row concatenation process", extra=log_context)
+        start_time = time.time()
         processed_rows = FileProcessor._create_rows_with_concatenation(df_subset)
+        processing_time = time.time() - start_time
         
-        logger.info(f"Successfully processed {len(processed_rows)} rows")
-        return Result.ok(ProcessResponse(
+        logger.info(
+            f"Successfully processed data", 
+            extra={
+                **log_context, 
+                "processed_rows": len(processed_rows),
+                "processing_time_seconds": f"{processing_time:.2f}"
+            }
+        )
+        
+        response = ProcessResponse(
             success=True, 
             headers=headers,
             rows=processed_rows,
             concatenated_columns=required_columns,
-            total_rows=len(processed_rows)
-        ))
+            total_rows=len(processed_rows),
+            status_code=HTTPStatus.OK.value,
+            status=HTTPStatus.OK.phrase
+        )
+        return Result.ok(response)
     
     @staticmethod
     def _create_rows_with_concatenation(df_subset: pd.DataFrame) -> List[List[str]]:
