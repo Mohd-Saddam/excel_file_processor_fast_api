@@ -13,6 +13,9 @@ from fastapi.responses import JSONResponse
 log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")
 os.makedirs(log_dir, exist_ok=True)
 
+# Define static folder path
+STATIC_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -25,6 +28,23 @@ log_file_path = os.path.join(log_dir, f"app_{datetime.now().strftime('%Y%m%d')}.
 file_handler = logging.FileHandler(log_file_path)
 file_handler.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
 logger.addHandler(file_handler)
+
+# Function to resolve file paths with static_path prefix
+def resolve_file_path(file_path: str) -> str:
+    """
+    Convert static_path references to actual file paths
+    
+    Args:
+        file_path: The file path which may contain 'static_path/' prefix
+        
+    Returns:
+        Resolved absolute file path
+    """
+    if file_path and file_path.startswith("static_path/"):
+        # Replace static_path with the actual static directory path
+        relative_path = file_path.replace("static_path/", "", 1)
+        return os.path.join(STATIC_DIR, relative_path)
+    return file_path
 
 # Initialize FastAPI app with metadata
 app = FastAPI(
@@ -125,6 +145,9 @@ async def process_excel(request: FileRequest = Body(default=None), response: Res
     if request.required_columns is None:
         request.required_columns = ["address", "phone"]
         logger.info(f"Using default required columns: {request.required_columns}")
+    
+    # Resolve file path to handle static_path references
+    request.file_path = resolve_file_path(request.file_path)
     
     # Log the incoming request
     logger.info(f"Processing request for file: {request.file_path}")
