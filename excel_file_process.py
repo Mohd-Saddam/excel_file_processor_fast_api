@@ -73,7 +73,7 @@ class FileRequest(BaseModel):
         file_path: Full path to the Excel file
         required_columns: List of column names that must exist in the file
     """
-    file_path: Optional[str] = None
+    file_path: Optional[str] = "static_path/excel/sample.xlsx"
     required_columns: Optional[List[str]] = None
 
 # Excel file processor with enhanced error handling
@@ -110,6 +110,7 @@ class FileProcessor:
         logger.info(f"Processing Excel file", extra=log_context)
         
         try:
+            # Validate if the file exists and can be read as an Excel file
             # Validate if the file exists and can be read as an Excel file
             with LogContext("file validation", **log_context):
                 validation_result = FileProcessor._validate_file(request.file_path)

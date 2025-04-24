@@ -137,11 +137,7 @@ async def process_excel(request: FileRequest = Body(default=None), response: Res
     if response is None:
         response = Response()
     
-    # Set default values for file_path and required_columns if not provided
-    if request.file_path is None:
-        request.file_path = "C:/Users/Admin/Downloads/sample.xlsx"
-        logger.info(f"Using default file path: {request.file_path}")
-    
+    # Set default values for required_columns if not provided
     if request.required_columns is None:
         request.required_columns = ["address", "phone"]
         logger.info(f"Using default required columns: {request.required_columns}")
