@@ -1,12 +1,7 @@
-from fastapi import FastAPI, HTTPException, status, Response, Body, Request
-from pydantic import BaseModel, Field, validator
-from typing import List, Dict, Any, Optional, Union
+from fastapi import FastAPI,status, Body
 import os
 import logging
 from datetime import datetime
-from utils.result import Result
-from excel_file_process import FileProcessor, FileRequest, ProcessResponse
-from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
 # Create logs directory if it doesn't exist
@@ -55,120 +50,173 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
-# Custom exception handler for validation errors
-@app.exception_handler(RequestValidationError)
-async def validation_exception_handler(request: Request, exc: RequestValidationError):
+def load_excel_file(file_path):
     """
-    Handle validation errors from empty JSON payloads
-    """
-    # Check if this is an empty JSON payload error
-    error_msg = str(exc)
-    if "JSON decode error" in error_msg and "Expecting value" in error_msg:
-        logger.info("Caught empty JSON payload error, handling with default values")
-        # Create a default response with default values
-        request_obj = FileRequest()
-        # Explicitly set default values to prevent None values
-        request_obj.file_path = "C:/Users/Admin/Downloads/sample.xlsx"
-        request_obj.required_columns = ["address", "phone"]
-        
-        logger.info(f"Using default file path: {request_obj.file_path}")
-        logger.info(f"Using default required columns: {request_obj.required_columns}")
-        
-        result = FileProcessor.process_file(request_obj)
-        
-        if result.is_success():
-            logger.info(f"Successfully processed file with {result.data.total_rows} rows")
-            # Update ProcessResponse status fields from the Result
-            result.data.status_code = result.status_code.value
-            result.data.status = result.status_code.phrase
-            return JSONResponse(content=result.data.dict())
-        else:
-            error_response = ProcessResponse(
-                success=False,
-                error=result.error,
-                status_code=result.status_code.value,
-                status=result.status_code.phrase
-            )
-            return JSONResponse(
-                content=error_response.dict(),
-                status_code=result.status_code.value
-            )
-    
-    # For other validation errors, return the standard error response
-    return JSONResponse(
-        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-        content={"detail": exc.errors()}
-    )
-
-# API Endpoints
-@app.post(
-    "/process-excel/", 
-    response_model=ProcessResponse,
-    tags=["Excel Processing"]
-)
-async def process_excel(request: FileRequest = Body(default=None), response: Response = None) -> ProcessResponse:
-    """
-    Process an Excel file and return transformed data.
-    
-    This endpoint validates an Excel file and processes its content according to
-    the specified requirements. It checks for file existence, required columns,
-    and transforms data into a dynamic table format with headers, rows, and metadata.
+    Load and parse an Excel file.
     
     Args:
-        request: FileRequest object with file path and required columns (optional)
-        response: FastAPI Response object to set status code
+        file_path (str): Path to the Excel file.
         
     Returns:
-        ProcessResponse: Object containing:
-            - success: Whether the operation was successful
+        tuple: (status_code, response_content, df) where:
             - status_code: HTTP status code
-            - status: HTTP status description
-            - headers: Column headers including concatenated column
-            - rows: 2D array of row data with concatenated values
-            - concatenated_columns: List of columns that were concatenated
-            - total_rows: Count of rows processed
-            - error: Error message if processing failed
+            - response_content: Response data or error message
+            - df: Pandas DataFrame or None if there was an error
     """
-    # Set default values if request is None or empty
-    if request is None:
-        logger.info("Empty request received, creating a new FileRequest with default values")
-        request = FileRequest()
+    logger.info(f"Reading Excel file: {file_path}")
     
-    if response is None:
-        response = Response()
+    if not os.path.exists(file_path):
+        logger.error(f"Excel file not found: {file_path}")
+        return status.HTTP_404_NOT_FOUND, {
+            "error": "Excel file not found"
+        }, None
     
-    # Set default values for required_columns if not provided
-    if request.required_columns is None:
-        request.required_columns = ["address", "phone"]
-        logger.info(f"Using default required columns: {request.required_columns}")
+    try:
+        import pandas as pd
+        df = pd.read_excel(file_path)
+        
+        if df.empty:
+            logger.warning("Excel file is empty")
+            return status.HTTP_200_OK, {
+                "headers": [],
+                "rows": [],
+                "concatenated_columns": [],
+                "total_rows": 0
+            }, None
+        
+        return status.HTTP_200_OK, None, df
     
-    # Resolve file path to handle static_path references
-    request.file_path = resolve_file_path(request.file_path)
+    except Exception as e:
+        logger.exception(f"Error processing Excel file: {str(e)}")
+        return status.HTTP_500_INTERNAL_SERVER_ERROR, {
+            "error": f"Error processing Excel file: {str(e)}"
+        }, None
+
+
+def concatenate_data(df, required_columns):
+    """
+    Process Excel data and concatenate specified columns.
     
-    # Log the incoming request
-    logger.info(f"Processing request for file: {request.file_path}")
+    Args:
+        df (pandas.DataFrame): DataFrame containing Excel data
+        required_columns (list): List of column names to concatenate
+        
+    Returns:
+        dict: Processed data with concatenated values in tabular form
+    """
+    import pandas as pd
     
-    result = FileProcessor.process_file(request)
+    # Dynamically get all column names directly from the Excel file
+    all_headers = list(df.columns)
+    logger.info(f"Excel file contains columns: {all_headers}")
     
-    # Set the status code in the response based on the Result object
-    response.status_code = result.status_code.value
+    # Determine which columns to concatenate based on the required_columns
+    concatenated_columns = [col for col in required_columns if col in all_headers]
+    if not concatenated_columns:
+        logger.warning("None of the specified required columns exist in the Excel file")
+        # Fall back to default behavior
+        if len(all_headers) >= 2:
+            concatenated_columns = [all_headers[0], all_headers[1]]
+        elif len(all_headers) == 1:
+            concatenated_columns = [all_headers[0]]
     
-    if result.is_success():
-        logger.info(f"Successfully processed file with {result.data.total_rows} rows")
-        # Update ProcessResponse status fields from the Result
-        result.data.status_code = result.status_code.value
-        result.data.status = result.status_code.phrase
-        return result.data
-    else:
-        # Create an error response with the appropriate status code
-        logger.warning(f"Returning error response: {result.error}")
-        error_response = ProcessResponse(
-            success=False,
-            error=result.error,
-            status_code=result.status_code.value,
-            status=result.status_code.phrase
-        )
-        return error_response
+    logger.info(f"Using columns for concatenation: {concatenated_columns}")
+    
+    # Determine which columns are not being concatenated
+    non_concatenated_columns = [col for col in all_headers if col not in concatenated_columns]
+    
+    # Add "Concatenated" as the last header, after non-concatenated columns
+    headers = non_concatenated_columns + ["Concatenated"]
+    
+    # Prepare rows with dynamic data - simplifying logic
+    rows = []
+    for _, row_data in df.iterrows():
+        # Create concatenated value from the specified columns
+        concat_parts = [str(row_data[col]) for col in concatenated_columns 
+                       if col in row_data and pd.notna(row_data[col])]
+        concat_value = " ".join(concat_parts)
+        
+        # Create a new row with concatenated value as the first element
+        new_row = [concat_value]
+        
+        # Add non-concatenated values
+        for col in non_concatenated_columns:
+            val = row_data[col]
+            if pd.notna(val):
+                new_row.append(val)
+            else:
+                new_row.append("")
+        
+        rows.append(new_row)
+    
+    # Create the response with dynamic headers and data in tabular form
+    response = {
+        "headers": headers,
+        "rows": rows,
+        "concatenated_columns": concatenated_columns,
+        "total_rows": len(rows)
+    }
+    
+    logger.info(f"Successfully created response with {len(rows)} rows and {len(headers)} columns")
+    return response
+
+
+# API Endpoints
+@app.get(
+    "/data/", 
+    tags=["Excel Processing"]
+)
+async def get_sample_excel_data():
+    """
+    Get Excel processing data with columns concatenation based on static parameters.
+    
+    This endpoint reads the sample.xlsx file from the static folder,
+    and processes the data using predefined required columns for concatenation.
+    
+    Returns:
+        dict: JSON response with:
+            - headers: Dynamic column headers with "Concatenated" as the first header
+            - rows: 2D array of row data with concatenated value as the first element
+            - concatenated_columns: Columns that were concatenated
+            - total_rows: Count of rows in the Excel file
+    """
+    logger.info("Serving dynamic Excel data from sample file")
+    
+    # Initialize response variables
+    status_code = status.HTTP_200_OK
+    response_content = {
+        "headers": [],
+        "rows": [],
+        "concatenated_columns": [],
+        "total_rows": 0
+    }
+    
+    # Static parameters for file processing
+    request_data = {
+        "required_columns": ["first_name", "last_name"]
+    }
+    
+    # Get the required columns from the static parameters
+    required_columns = request_data["required_columns"]
+    logger.info(f"Using static required columns for concatenation: {required_columns}")
+    
+    # Create a FileRequest using the sample file from static folder
+    sample_file_path = os.path.join(STATIC_DIR, "excel", "sample.xlsx")
+    
+    # Load the Excel file
+    status_code, file_response, df = load_excel_file(sample_file_path)
+    
+    # Process the data if file was loaded successfully
+    if status_code == status.HTTP_200_OK and df is not None:
+        response_content = concatenate_data(df, required_columns)
+    elif file_response is not None:
+        response_content = file_response
+    
+    # Single exit point
+    if status_code != status.HTTP_200_OK:
+        return JSONResponse(status_code=status_code, content=response_content)
+    return response_content
+
 
 # Run the application if executed directly
 if __name__ == "__main__":
