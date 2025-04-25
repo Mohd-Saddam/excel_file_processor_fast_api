@@ -205,7 +205,7 @@ async def get_sample_excel_data():
     
     # Static parameters for file processing
     request_data = {
-        "required_columns": ["first_name", "last_name"]
+        "required_columns": ["A", "C","D"]
     }
     
     # Get the required columns from the static parameters
@@ -213,7 +213,7 @@ async def get_sample_excel_data():
     logger.info(f"Using static required columns for concatenation: {required_columns}")
     
     # Create a FileRequest using the sample file from static folder
-    sample_file_path = os.path.join(STATIC_DIR, "excel", "sample.xlsx")
+    sample_file_path = os.path.join(STATIC_DIR, "excel", "Shipskart_training_project_3_back-end_data.xlsx")
     
     # Load the Excel file
     status_code, file_response, df = load_excel_file(sample_file_path)
