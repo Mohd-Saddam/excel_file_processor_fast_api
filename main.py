@@ -3,6 +3,8 @@ import os
 import logging
 from datetime import datetime
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # Create logs directory if it doesn't exist
 log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")
@@ -41,6 +43,8 @@ def resolve_file_path(file_path: str) -> str:
         return os.path.join(STATIC_DIR, relative_path)
     return file_path
 
+
+
 # Initialize FastAPI app with metadata
 app = FastAPI(
     title="Excel File Processor API",
@@ -48,6 +52,14 @@ app = FastAPI(
     version="1.1.0",
     docs_url="/docs",
     redoc_url="/redoc"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Or specify your Angular app's origin
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 def load_excel_file(file_path):
@@ -216,6 +228,7 @@ async def get_sample_excel_data():
     if status_code != status.HTTP_200_OK:
         return JSONResponse(status_code=status_code, content=response_content)
     return response_content
+
 
 
 # Run the application if executed directly
