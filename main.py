@@ -138,7 +138,7 @@ def concatenate_data(df, required_columns):
     non_concatenated_columns = [col for col in all_headers if col not in concatenated_columns]
     
     # Add "Concatenated" as the last header, after non-concatenated columns
-    headers = non_concatenated_columns + ["Concatenated"]
+    headers = ["Concatenated"] + non_concatenated_columns 
     
     # Prepare rows with dynamic data - simplifying logic
     rows = []
